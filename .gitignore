@@ -2,3 +2,6 @@
 encore.gen.go
 encore.gen.cue
 /encore.gen
+requests-results/*.png
+benchmark.json
+cover.out
