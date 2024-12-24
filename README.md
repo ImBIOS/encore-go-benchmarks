@@ -1,72 +1,48 @@
+
 # Encore Go Benchmarks
 
-## Note Terminal 1
+This repository contains a comprehensive set of benchmarks and performance tests for Encore, Go, TypeScript, and other technologies used in modern backend development. It is designed to help developers assess and compare the performance of their backend services in terms of response time, latency, and requests per second (RPS). The benchmarks focus on several implementations, including Encore, Go-kit, and Encore-TS, providing valuable insights for optimizing backend architectures and improving scalability.
 
-```bash
+## Features
 
-```
+- **Benchmarking Encore with Go and TypeScript**: Includes performance tests for both Encore-Go and Encore-TS implementations.
+- **Request Performance Metrics**: RPS (Requests per Second), latency, and response time analysis for different backend configurations.
+- **Cold Start Performance**: Tests to analyze how quickly services start and handle traffic after deployment.
+- **Visualizations**: Comprehensive charts such as response time box plots, latency percentiles, and RPS percentiles to visualize benchmarking results.
+- **Easy Integration**: Setup scripts and configuration files that allow easy integration with existing Encore projects and other backend technologies.
 
-## Note Terminal 2
+## How to Run the Benchmarks
 
-```bash
-   main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   8s
- ➜  oha -c 50 -z 10s -m GET "http://localhost:4000/hello" --json > benchmark.json
-^C%
+1. Clone the repository:
 
-󰀵  󱑍 07:56  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   8s
- ➜  oha -c 150 -z 10s -m GET "http://localhost:4000/hello" --json > benchmark.json
-^C%
+   ```bash
+   git clone https://github.com/ImBIOS/encore-go-benchmarks.git
+   cd encore-go-benchmarks
+   ```
 
-󰀵  󱑍 07:57  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   9s
- ➜  oha -c 150 -z 10s -m GET "http://localhost:4000/hello" --json > benchmark.json
-^C%
+2. Install dependencies:
 
-󰀵  󱑍 07:57  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   5s
- ➜  oha -c 150 -z 10s -m GET "http://127.0.0.1:4000/hello" --json > benchmark.json
-^C%
+   ```bash
+   pipenv install
+   ```
 
-󰀵  󱑍 07:57  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   5s
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-^C%
+3. Run the benchmark tests:
 
-󰀵  󱑍 07:58  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
+   ```bash
+   pipenv run ./benchmark.sh
+   ```
 
-󰀵  󱑍 07:58  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   3s
- ➜  pipenv run python visualize_benchmark.py
+## Benchmark Types
 
-󰀵  󱑍 07:59  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)
- ➜  oha -c 150 -z 10s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-^C%
+- **Go**: Performance tests for the Go-based implementation using Encore and Go-kit.
+- **TypeScript (Encore-TS)**: Tests for the TypeScript implementation using Encore and other backend frameworks.
+- **Cold Starts**: Evaluating the startup time of Encore services under different conditions.
+- **Request Handling**: Detailed benchmarking of how various services handle concurrent requests, focusing on response times and throughput.
 
-󰀵  󱑍 07:59  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   5s
- ➜  oha -c 150 -z 5s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
+## Contributing
 
-󰀵  󱑍 07:59  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   5s
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
+Contributions are welcome! If you find any issues or would like to improve the benchmarks, feel free to fork the repository and submit a pull request.
 
-󰀵  󱑍 07:59  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   3s
- ➜  pipenv run python visualize_benchmark.py
+## License
 
-󰀵  󱑍 07:59  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)
- ➜  oha -c 150 -z 10s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-^C%
-
-󰀵  󱑍 08:00  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   4s
- ➜  oha -c 150 -z 4s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-
-󰀵  󱑍 08:02  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   4s
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-
-󰀵  󱑍 08:03  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   3s
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-
-󰀵  󱑍 08:03  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   3s
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-
-󰀵  󱑍 08:03  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)   3s
- ➜  pipenv run python visualize_benchmark.py
-
-󰀵  󱑍 08:03  ﱮ encore-go-benchmarks/requests/encore    main ✘!?+7 via 🐹 v1.23.1 via 🐍 v3.12.3 (encore)
- ➜  oha -c 150 -z 3s -m GET "http://127.0.0.1:4000/hello" --json --latency-correction --disable-keepalive > benchmark.json
-```
+See the [LICENSE](LICENSE) file for details.
