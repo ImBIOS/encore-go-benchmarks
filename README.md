@@ -3,6 +3,10 @@
 
 This repository contains a comprehensive set of benchmarks and performance tests for Encore, Go, TypeScript, and other technologies used in modern backend development. It is designed to help developers assess and compare the performance of their backend services in terms of response time, latency, and requests per second (RPS). The benchmarks focus on several implementations, including Encore, Go-kit, and Encore-TS, providing valuable insights for optimizing backend architectures and improving scalability.
 
+![Latency Percentiles](./assets/latency_percentiles_comparison.png)
+![Response Time Box Plot](./assets/response_time_boxplot_comparison.png)
+![RPS Percentiles](./assets/rps_percentiles_comparison.png)
+
 ## Features
 
 - **Benchmarking Encore with Go and TypeScript**: Includes performance tests for both Encore-Go and Encore-TS implementations.
